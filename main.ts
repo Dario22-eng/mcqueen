@@ -1,10 +1,12 @@
 input.onButtonPressed(Button.A, function () {
     maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
-    basic.pause(500)
+    basic.pause(2000)
     maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
 })
 input.onButtonPressed(Button.B, function () {
     maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
+    basic.pause(2000)
+    maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
 })
 basic.showLeds(`
     . . # . .
@@ -19,4 +21,7 @@ basic.clearScreen()
 basic.forever(function () {
     basic.showIcon(IconNames.Heart)
     basic.showIcon(IconNames.SmallHeart)
+    for (let index = 0; index < 4; index++) {
+        music.playMelody("F G F A G A F G ", 120)
+    }
 })
